@@ -31,6 +31,8 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         const data = await response.json();
         if(response.ok) {
             alert("Signup successful! You can now log in.");
+            
+            document.getElementById('log-email').value = email;
             toggleForm('login');
         } else {
             alert("Error: " + data.message);
@@ -56,6 +58,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         const data = await response.json();
         if(response.ok) {
             alert("Login successful! Welcome back.");
+            window.location.href = "dashboard.html";
         } else {
             alert("Error: " + data.message);
         }
