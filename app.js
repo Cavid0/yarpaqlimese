@@ -22,7 +22,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     const password = document.getElementById('reg-password').value;
     
     try {
-        const response = await fetch('http://localhost:5500/api/register', {
+        const response = await fetch('/api/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, email, password })
@@ -49,7 +49,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     const password = document.getElementById('log-password').value;
     
     try {
-        const response = await fetch('http://localhost:5500/api/login', {
+        const response = await fetch('/api/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
